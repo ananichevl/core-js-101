@@ -120,59 +120,32 @@ function fromJSON(proto, json) {
  */
 
 const cssSelectorBuilder = {
-  element(value) {
-    this.elementValue = value;
-    return this;
+  element(/* value */) {
+    throw new Error('Not implemented');
   },
 
-  id(value) {
-    this.idValue = value;
-    return this;
+  id(/* value */) {
+    throw new Error('Not implemented');
   },
 
-  class(value) {
-    this.classes = this.classes || [];
-    this.classes.push(value);
-    return this;
+  class(/* value */) {
+    throw new Error('Not implemented');
   },
 
-  attr(value) {
-    this.attrValue = value;
-    return this;
+  attr(/* value */) {
+    throw new Error('Not implemented');
   },
 
-  pseudoClass(value) {
-    this.pseudoClasses = this.pseudoClasses || [];
-    this.pseudoClasses.push(value);
-    return this;
+  pseudoClass(/* value */) {
+    throw new Error('Not implemented');
   },
 
-  pseudoElement(value) {
-    this.pseudoElementValue = value;
-    return this;
+  pseudoElement(/* value */) {
+    throw new Error('Not implemented');
   },
 
-  combine(selector1, combinator, selector2) {
-    this.selectors = this.selectors || [];
-    this.selectors.push(selector1);
-    this.selectors.push(selector2);
-    this.combiners = this.combiners || [];
-    return this;
-  },
-
-  stringify() {
-    console.log(this.selectors);
-    const res = `${this.elementValue ? this.elementValue : ''}${this.idValue ? `#${this.idValue}` : ''}${this.classes ? `${this.classes.reduce((a, b) => `${a}.${b}`, '')}` : ''}${this.attrValue ? `[${this.attrValue}]` : ''}${this.pseudoClasses ? `${this.pseudoClasses.reduce((a, b) => `${a}:${b}`, '')}` : ''}${this.pseudoElementValue ? `::${this.pseudoElementValue}` : ''}`;
-    this.elementValue = null;
-    this.idValue = null;
-    this.classes = null;
-    this.attrValue = null;
-    this.pseudoClasses = null;
-    this.pseudoElementValue = null;
-    this.selectors = null;
-    this.combiners = null;
-
-    return res;
+  combine(/* selector1, combinator, selector2 */) {
+    throw new Error('Not implemented');
   },
 };
 
